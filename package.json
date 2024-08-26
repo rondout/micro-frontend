@@ -1,0 +1,25 @@
+{
+  "name": "qiankun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "install:main": "cd base-app && pnpm install",
+    "install:vue": "cd child-vue3-app && pnpm install",
+    "install:react": "cd child-react-app && pnpm install",
+    "install:native": "cd child-native-app && pnpm install",
+    "dev:main": "cd base-app && pnpm dev",
+    "dev:vue": "cd child-vue3-app && pnpm dev",
+    "dev:react": "cd child-react-app && pnpm dev",
+    "dev:native": "cd child-native-app && pnpm dev",
+    "install": "pnpm install:main && pnpm install:vue && pnpm install:react && pnpm install:native",
+    "dev": "pnpm dev:main & pnpm dev:vue & pnpm dev:react & pnpm dev:native",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

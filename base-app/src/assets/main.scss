@@ -1,0 +1,9 @@
+@import './base.scss';
+
+micro-app {
+    height: 100%;
+}
+
+micro-app-body {
+    min-height: unset !important;
+}
