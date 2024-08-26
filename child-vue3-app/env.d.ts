@@ -2,14 +2,19 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 17:54:34
- * @FilePath: \qiankun\child-vue3-app\env.d.ts
+ * @LastEditTime: 2024-08-26 12:25:36
+ * @FilePath: \micro-frontend\child-vue3-app\env.d.ts
  * @Description: 
  */
 /// <reference types="vite/client" />
 
 declare global {
     interface Window {
+        microApp: {
+            addDataListener:(dataListener: (data: Object) => any, autoTrigger?: boolean) => void;
+            removeDataListener:(dataListener: (data: Object) => any, autoTrigger?: boolean) => void;
+            clearDataListener: () => void;
+        };
         /** 应用名称 */
         __MICRO_APP_NAME__: string;
         /** 判断应用是否在微前端环境中 */
