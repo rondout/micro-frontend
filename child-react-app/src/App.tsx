@@ -2,51 +2,43 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 17:46:45
- * @FilePath: \qiankun\child-react-app\src\App.tsx
- * @Description: 
+ * @LastEditTime: 2024-08-28 14:49:14
+ * @FilePath: \micro-frontend\child-react-app\src\App.tsx
+ * @Description:
  */
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createContext, useEffect } from "react";
+import "./App.css";
+import MessageTransfer from "./views/MessageTransfer";
+import Main from "./views/Main";
+import { Button, ConfigProvider } from "antd";
+import { useSelector } from "react-redux";
+import { selectTheme } from "./store/main";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const theme = useSelector(selectTheme);
+  const ReachableContext = createContext<string | null>(null);
+  const UnreachableContext = createContext<string | null>(null);
 
   useEffect(() => {
-    console.log('useEffect')
+    console.log("useEffect");
     if (window.__MICRO_APP_ENVIRONMENT__) {
-      console.log('我（React App）在微前端环境中', window)
-    }else {
-      console.log('child-react-app mounted')
+      console.log("我（React App）在微前端环境中", window);
+    } else {
+      console.log("child-react-app mounted");
     }
-  }, [])
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ConfigProvider
+      theme={{ token: { colorPrimary: theme } }}
+    >
+      <ReachableContext.Provider value="Light">
+        <UnreachableContext.Provider value="Bamboo" />
+        <Main></Main>
+        <MessageTransfer></MessageTransfer>
+      </ReachableContext.Provider>
+    </ConfigProvider>
+  );
 }
 
-export default App
+export default App;

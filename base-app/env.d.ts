@@ -7,6 +7,19 @@
  * @Description: 
  */
 /// <reference types="vite/client" />
+import { MicroMessageType, SubApps } from '@/models/base.model'
 import 'ant-design-vue/typings/global'
 
+declare global {
+    interface MicroMessage<T = any> {
+        type: MicroMessageType;
+        value:T
+    }
+}
+
+declare module '@micro-zoe/micro-app' {
+    interface MicroApp {
+        setData: <T>(appName: SubApps, data: {type: MicroMessageType; value?:T}) => void;
+    }
+}
 export {}

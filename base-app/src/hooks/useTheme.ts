@@ -2,8 +2,8 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 09:58:58
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 17:47:21
- * @FilePath: \qiankun\base-app\src\hooks\useTheme.ts
+ * @LastEditTime: 2024-08-27 18:37:42
+ * @FilePath: \micro-frontend\base-app\src\hooks\useTheme.ts
  * @Description: 
  */
 import { THEME_COLOR_KEY } from "@/models/theme.model";
@@ -11,7 +11,7 @@ import { useMainStore } from "@/stores/main";
 import type { ThemeConfig } from "ant-design-vue/es/config-provider/context";
 import { computed, onMounted, watch } from "vue";
 
-export default function useTheme() {
+export default function useTheme(onChange?: (primary: string) => void) {
     const { theme, changePrimary } = useMainStore()
 
     const antdTheme = computed<ThemeConfig>(() => {
@@ -34,10 +34,10 @@ export default function useTheme() {
         if(storageThemeColor) {
             changePrimary(storageThemeColor)
         } 
+        setColorToDocument()
     }
 
     onMounted(() => {
-        setColorToDocument()
         initColors()
     })
 
@@ -48,6 +48,7 @@ export default function useTheme() {
     const changeTheme = (primary: string) => {
         changePrimary(primary)
         localStorage.setItem(THEME_COLOR_KEY, primary)
+        onChange?.(primary)
     }
 
     return {theme, antdTheme, changeTheme}

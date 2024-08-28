@@ -2,10 +2,11 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 09:38:34
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 10:55:00
- * @FilePath: \qiankun\base-app\src\router\index.ts
+ * @LastEditTime: 2024-08-28 12:22:32
+ * @FilePath: \micro-frontend\base-app\src\router\index.ts
  * @Description:
  */
+import { getToken } from "@/models/base.model";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -45,6 +46,16 @@ const router = createRouter({
         }
       ],
     },
+    {
+      path:'/login',
+      name: 'login',
+      component: () => import("@/views/Login.vue"),
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      component: () => import("@/views/layout/NotFound.vue"),
+    }
     // {
     //   path: '/about',
     //   name: 'about',
@@ -55,5 +66,14 @@ const router = createRouter({
     // }
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  if(getToken() || to.path === '/login') {
+    next();
+  }
+  else {
+    next('/login')
+  }
+})
 
 export default router;

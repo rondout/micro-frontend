@@ -2,14 +2,28 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 17:54:34
- * @FilePath: \qiankun\child-vue3-app\env.d.ts
+ * @LastEditTime: 2024-08-27 17:56:54
+ * @FilePath: \micro-frontend\child-vue3-app\env.d.ts
  * @Description: 
  */
 /// <reference types="vite/client" />
+import type { MicroMessageType } from '@/models/base.model';
+import 'ant-design-vue/typings/global'
 
 declare global {
+
+    interface MicroMessage<T = any> {
+        type: MicroMessageType;
+        value?: T;
+    }
     interface Window {
+        microApp: {
+            addDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+            removeDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+            clearDataListener: () => void;
+            getData: () => MicroMessage;
+            dispatch: <T = any, C extends Function>(data:T, cb: C) => void
+        };
         /** 应用名称 */
         __MICRO_APP_NAME__: string;
         /** 判断应用是否在微前端环境中 */
