@@ -2,16 +2,15 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 09:43:56
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 11:00:06
- * @FilePath: \qiankun\base-app\src\views\layout\MainLayout.vue
+ * @LastEditTime: 2024-08-27 18:30:15
+ * @FilePath: \micro-frontend\base-app\src\views\layout\MainLayout.vue
  * @Description: 
 -->
 
 <template>
   <a-layout class="main-layout">
     <a-layout-header :style="styles.headerStyle" class="flex-start">
-      <ThemeChanger class="pointer" />
-      <a-switch style="margin-left: 16px" v-model:checked="isDark"></a-switch>
+        <a-switch style="margin-left: 16px" v-model:checked="isDark"></a-switch>
       <MainHeader />
     </a-layout-header>
     <a-layout>
@@ -32,7 +31,6 @@ import useTheme from "@/hooks/useTheme";
 import type { CSSProperties } from "vue";
 import { computed } from "vue";
 import type { AnyObject } from "@/models/base.model";
-import ThemeChanger from "@/components/themeChanger.vue";
 import MainHeader from './MainHeader.vue'
 import LayoutMenu from "@/views/layout/LayoutMenu.vue";
 import type { MenuTheme } from "ant-design-vue";

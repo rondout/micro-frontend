@@ -1,18 +1,39 @@
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <!--
  * @Author: shufei.han
  * @Date: 2024-08-02 16:15:26
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 11:08:36
- * @FilePath: \qiankun\base-app\src\views\ReactApp.vue
+ * @LastEditTime: 2024-08-28 14:57:30
+ * @FilePath: \micro-frontend\base-app\src\views\ReactApp.vue
  * @Description: 
 -->
 <template>
-    <micro-app name="ReactApp" @created="created" keep-alive url="http://localhost:4003/" iframe></micro-app>
+    <micro-app :name="SubApps.REACT" @created="created" :data="data" keep-alive url="http://localhost:4003/" iframe  @datachange="handleChange"></micro-app>
 </template> 
 
 <script setup lang="ts">
+/** @jsxRuntime classic */
+/** @jsx jsxCustomEvent */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
+
+import { MicroMessageType, SubApps } from '@/models/base.model';
+import { ref } from 'vue';
+import { useMainStore } from '@/stores/main';
+
+const {setMsgFromChild} = useMainStore()
+
+const data = ref<MicroMessage>({
+    type: MicroMessageType.TEXT_MSG,
+    value: 'This is a initial TextMessage'
+})
+
 const created= (event: CustomEvent) => {
     console.log('event', event.type);
+}
+
+const handleChange = (e) => {
+    setMsgFromChild(SubApps.REACT, e.detail.data as MicroMessage)
 }
 </script> 
 

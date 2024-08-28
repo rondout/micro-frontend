@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-20 11:01:58
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-26 10:26:52
+ * @LastEditTime: 2024-08-28 12:03:11
  * @FilePath: \micro-frontend\base-app\src\views\MainPage.vue
  * @Description: 
 -->
@@ -31,14 +31,33 @@
         </a-tooltip>
       </li>
     </ul>
+    <div>
+      <h2>
+        Messages from child: 
+      </h2>
+      <div v-for="(item, index) of msgsFromChild" :key="index" class="flex-start msg-li">
+        <div>
+          来自
+            <span class="msg-from">
+              {{ item.child }}
+            </span>
+           的消息： 
+        </div>
+        <div>
+          {{ JSON.stringify(item.message) }}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { SubAppConfig, SubAppList } from "@/models/base.model";
+import { useMainStore } from "@/stores/main";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const {msgsFromChild} = useMainStore()
 
 const navigateTo = (config: SubAppConfig) => {
   router.push({
@@ -65,6 +84,13 @@ const navigateTo = (config: SubAppConfig) => {
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+  .msg-li {
+    color: grey;
+    .msg-from {
+      color: var(--primary);
+      font-weight: bold;
     }
   }
 }

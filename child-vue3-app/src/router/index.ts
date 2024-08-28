@@ -2,16 +2,16 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 16:14:55
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-26 11:46:36
+ * @LastEditTime: 2024-08-28 15:07:49
  * @FilePath: \micro-frontend\child-vue3-app\src\router\index.ts
  * @Description: 
  */
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MainLayout from '@/views/layout/MainLayout.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
