@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-27 17:56:54
+ * @LastEditTime: 2024-08-29 12:05:55
  * @FilePath: \micro-frontend\child-vue3-app\env.d.ts
  * @Description: 
  */
@@ -22,7 +22,7 @@ declare global {
             removeDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
             clearDataListener: () => void;
             getData: () => MicroMessage;
-            dispatch: <T = any, C extends Function>(data:T, cb: C) => void
+            dispatch: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void
         };
         /** 应用名称 */
         __MICRO_APP_NAME__: string;

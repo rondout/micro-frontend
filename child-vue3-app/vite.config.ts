@@ -2,8 +2,8 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 16:14:55
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-08 15:42:01
- * @FilePath: \child-vue3-app\vite.config.ts
+ * @LastEditTime: 2024-08-28 18:32:02
+ * @FilePath: \micro-frontend\child-vue3-app\vite.config.ts
  * @Description: 
  */
 import { fileURLToPath, URL } from 'node:url'
@@ -36,6 +36,7 @@ export default defineConfig(({ mode }) => {
     envDir: './env',
     server: {
       port: 4002,
+      host: '0.0.0.0',
       headers: {
         'Access-Control-Allow-Origin': '*',
       }

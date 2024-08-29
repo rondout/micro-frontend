@@ -12,7 +12,7 @@
     "dev:react": "cd child-react-app && pnpm dev",
     "dev:native": "cd child-native-app && pnpm dev",
     "install": "pnpm install:main && pnpm install:vue && pnpm install:react && pnpm install:native",
-    "dev": "pnpm dev:main & pnpm dev:vue & pnpm dev:react & pnpm dev:native",
+    "dev": "concurrently \"pnpm dev:main\" \"pnpm dev:vue\" \"pnpm dev:react\" \"pnpm dev:native\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

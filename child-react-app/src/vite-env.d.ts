@@ -24,7 +24,7 @@ declare global {
             clearDataListener: () => void;
             getData: () => MicroMessage;
             // eslint-disable-next-line @typescript-eslint/ban-types
-            dispatch: <T = any, C extends Function>(data:T, cb?: C) => void
+            dispatch: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void
         };
         /** 应用名称 */
         __MICRO_APP_NAME__: string;
