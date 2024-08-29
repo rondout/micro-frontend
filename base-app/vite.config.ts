@@ -2,8 +2,8 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 09:38:34
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-08 15:11:58
- * @FilePath: \qiankun\base-app\vite.config.ts
+ * @LastEditTime: 2024-08-28 18:23:06
+ * @FilePath: \micro-frontend\base-app\vite.config.ts
  * @Description: 
  */
 import { fileURLToPath, URL } from 'node:url'
@@ -24,6 +24,9 @@ export default defineConfig({
     }),
     vueDevTools(),
   ],
+  server: {
+    host:'0.0.0.0'
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

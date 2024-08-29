@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 16:15:26
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 14:57:30
+ * @LastEditTime: 2024-08-28 18:20:22
  * @FilePath: \micro-frontend\base-app\src\views\ReactApp.vue
  * @Description: 
 -->
@@ -15,7 +15,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsxCustomEvent */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
+// import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 
 import { MicroMessageType, SubApps } from '@/models/base.model';
 import { ref } from 'vue';

@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 16:14:55
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-27 18:13:36
+ * @LastEditTime: 2024-08-29 12:05:32
  * @FilePath: \micro-frontend\child-vue3-app\src\views\AboutView.vue
  * @Description: 
 -->
@@ -22,6 +22,7 @@
 </template>
 
 <script lang="ts" setup>
+import { MicroMessageType } from '@/models/base.model';
 import { useMsgStore } from '@/stores/message';
 import { ref } from 'vue';
 
@@ -30,11 +31,8 @@ const name = ref('')
 
 const sendMessageToBase = () => {
   const msg = {
-    name: 'child-vue3-app',
-    data: {
-      name: name.value,
-      age: 18
-    }
+   type: MicroMessageType.TEXT_MSG,
+   value: name.value
   }
   window.microApp?.dispatch(msg, () => {
     console.log("发送完成");
