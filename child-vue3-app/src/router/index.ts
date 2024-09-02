@@ -11,7 +11,6 @@ import BaseToChild from '../views/BaseToChild.vue'
 import MainLayout from '@/views/layout/MainLayout.vue'
 import { getToken } from '@/models/base.model'
 
-console.log(window.__MICRO_APP_BASE_ROUTE__);
 const router = createRouter({
   
   history: createWebHashHistory(window.__MICRO_APP_BASE_ROUTE__ || '/'),

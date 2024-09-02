@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-08 14:52:27
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-09-02 12:16:08
+ * @LastEditTime: 2024-09-02 15:57:50
  * @FilePath: \micro-frontend\base-app\src\micro\index.ts
  * @Description: 
  */

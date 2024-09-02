@@ -2,17 +2,17 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-09-02 14:41:37
+ * @LastEditTime: 2024-09-02 14:51:37
  * @FilePath: \micro-frontend\child-react-app\src\App.tsx
  * @Description:
  */
 import { createContext, useEffect } from "react";
 import "./App.css";
-import MessageTransfer from "./views/MessageTransfer";
-import Main from "./views/Main";
 import { ConfigProvider } from "antd";
 import { useSelector } from "react-redux";
 import { selectTheme } from "./store/main";
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 
 function App() {
   const theme = useSelector(selectTheme);
@@ -29,13 +29,10 @@ function App() {
   }, []);
 
   return (
-    <ConfigProvider
-      theme={{ token: { colorPrimary: theme } }}
-    >
+    <ConfigProvider theme={{ token: { colorPrimary: theme } }}>
       <ReachableContext.Provider value="Light">
         <UnreachableContext.Provider value="Bamboo" />
-        <Main></Main>
-        <MessageTransfer></MessageTransfer>
+        <RouterProvider router={router}></RouterProvider>
       </ReachableContext.Provider>
     </ConfigProvider>
   );

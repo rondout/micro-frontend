@@ -3,12 +3,12 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 16:15:26
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 18:20:22
+ * @LastEditTime: 2024-09-02 15:47:55
  * @FilePath: \micro-frontend\base-app\src\views\ReactApp.vue
  * @Description: 
 -->
 <template>
-    <micro-app :name="SubApps.REACT" @created="created" :data="data" keep-alive url="http://192.168.8.125:4003/" iframe  @datachange="handleChange"></micro-app>
+    <micro-app :name="SubApps.REACT" @created="created" baseroute="/react/" :data="data" keep-alive url="http://192.168.56.1:4003/" iframe  @datachange="handleChange"></micro-app>
 </template> 
 
 <script setup lang="ts">

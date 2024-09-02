@@ -2,13 +2,14 @@
  * @Author: shufei.han
  * @Date: 2024-08-28 09:57:50
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 14:57:14
+ * @LastEditTime: 2024-09-02 14:54:36
  * @FilePath: \micro-frontend\child-react-app\src\views\Main.tsx
  * @Description:
  */
 import { useState } from "react";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
+import { Outlet } from "react-router-dom";
 
 export default function Main() {
   const [count, setCount] = useState(0);
@@ -41,6 +42,7 @@ export default function Main() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Outlet></Outlet>
     </div>
   );
 }

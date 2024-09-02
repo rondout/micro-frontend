@@ -54,7 +54,7 @@ export class MicroServer {
 
     private bootstrap() {
         this.instance.listen(microServerChildMap.get(this.app)?.port, () => {
-            this.log(chalk.green("MicroServer is running at ") + chalk.bold.underline("http://192.168.8.125:" + microServerChildMap.get(this.app)?.port));
+            this.log(chalk.green("MicroServer is running at ") + chalk.bold.underline("http://192.168.56.1:" + microServerChildMap.get(this.app)?.port));
         });
     }
 
