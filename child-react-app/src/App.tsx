@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 14:49:14
+ * @LastEditTime: 2024-09-02 14:41:37
  * @FilePath: \micro-frontend\child-react-app\src\App.tsx
  * @Description:
  */
@@ -10,7 +10,7 @@ import { createContext, useEffect } from "react";
 import "./App.css";
 import MessageTransfer from "./views/MessageTransfer";
 import Main from "./views/Main";
-import { Button, ConfigProvider } from "antd";
+import { ConfigProvider } from "antd";
 import { useSelector } from "react-redux";
 import { selectTheme } from "./store/main";
 
