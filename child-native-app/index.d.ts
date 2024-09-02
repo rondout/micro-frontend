@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /*
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-29 12:05:55
- * @FilePath: \micro-frontend\child-vue3-app\env.d.ts
+ * @LastEditTime: 2024-09-02 10:03:33
+ * @FilePath: \micro-frontend\child-native-app\index.d.ts
  * @Description: 
  */
-/// <reference types="vite/client" />
-import type { MicroMessageType } from '@/models/base.model';
-import 'ant-design-vue/typings/global'
+import { MicroMessageType } from "./src/models/base.model";
 
 declare global {
 
@@ -24,7 +23,8 @@ declare global {
             addGlobalDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
             clearDataListener: () => void;
             getData: () => MicroMessage;
-            dispatch: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void;
+            // eslint-disable-next-line @typescript-eslint/ban-types
+            dispatch: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void
             getGlobalData: () => MicroMessage;
             setGlobalData: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void;
         };

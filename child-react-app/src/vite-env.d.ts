@@ -21,10 +21,14 @@ declare global {
         microApp: {
             addDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
             removeDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+            removeGlobalDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+            addGlobalDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
             clearDataListener: () => void;
             getData: () => MicroMessage;
             // eslint-disable-next-line @typescript-eslint/ban-types
             dispatch: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void
+            getGlobalData: () => MicroMessage;
+            setGlobalData: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void;
         };
         /** 应用名称 */
         __MICRO_APP_NAME__: string;

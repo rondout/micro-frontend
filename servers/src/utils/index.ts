@@ -2,8 +2,8 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:41:50
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-08 15:21:17
- * @FilePath: \qiankun\servers\src\utils\index.ts
+ * @LastEditTime: 2024-09-02 11:29:51
+ * @FilePath: \micro-frontend\servers\src\utils\index.ts
  * @Description: 
  */
 import express, { type Express } from "express";
@@ -54,7 +54,7 @@ export class MicroServer {
 
     private bootstrap() {
         this.instance.listen(microServerChildMap.get(this.app)?.port, () => {
-            this.log(chalk.green("MicroServer is running at ") + chalk.bold.underline("http://localhost:" + microServerChildMap.get(this.app)?.port));
+            this.log(chalk.green("MicroServer is running at ") + chalk.bold.underline("http://192.168.8.125:" + microServerChildMap.get(this.app)?.port));
         });
     }
 

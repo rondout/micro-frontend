@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 11:05:53
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-26 14:13:00
+ * @LastEditTime: 2024-09-02 12:05:41
  * @FilePath: \micro-frontend\base-app\src\models\base.model.ts
  * @Description:
  */
@@ -22,6 +22,7 @@ export interface SubAppConfig {
   description: string;
   entry: string;
   routerPath: string;
+  activeRule?: string;
 }
 
 export const SubAppsConfigMap = new Map<SubApps, SubAppConfig>([
@@ -31,8 +32,9 @@ export const SubAppsConfigMap = new Map<SubApps, SubAppConfig>([
       name: SubApps.VUE,
       label: "VUE APP",
       description: 'Vue3 + Vite App',
-      entry: "//localhost:3000",
+      entry: "//http://192.168.8.125:3000",
       routerPath: "/vue",
+      activeRule: "/vue",
     },
   ],
   [
@@ -41,7 +43,7 @@ export const SubAppsConfigMap = new Map<SubApps, SubAppConfig>([
       name: SubApps.REACT,
       label: "REACT APP",
       description: 'React + Vite App',
-      entry: "//localhost:3001",
+      entry: "//http://192.168.8.125:3001",
       routerPath: "/react",
     },
   ],
@@ -51,7 +53,7 @@ export const SubAppsConfigMap = new Map<SubApps, SubAppConfig>([
       name: SubApps.NATIVE,
       label: "NATIVE APP",
       description: 'Native + Express App',
-      entry: "//localhost:3002",
+      entry: "//http://192.168.8.125:3002",
       routerPath: "/native",
     },
   ],
@@ -67,6 +69,7 @@ export enum MicroMessageType {
   CHANGE_THEME = 'change_theme',
   SET_COUNT = 'set_count',
   TEXT_MSG = 'text_msg',
+  GLOBAL_MSG = 'global_msg'
 }
 
 export const TOKEN_KEY = 'token';

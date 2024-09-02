@@ -2,8 +2,8 @@
  * @Author: shufei.han
  * @Date: 2024-08-20 10:02:38
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-22 16:04:03
- * @FilePath: \qiankun\child-native-app\index.ts
+ * @LastEditTime: 2024-09-02 11:30:57
+ * @FilePath: \micro-frontend\child-native-app\src\index.ts
  * @Description: 
  */
 import { resolve } from 'path';
@@ -23,9 +23,9 @@ class NativeServer {
 
     private init() {
         this.setCors();
-        this.instance.use(express.static(resolve(__dirname, './public')))
+        this.instance.use(express.static(resolve(__dirname, '../public')))
         this.instance.listen(this.port, () => {
-            console.log(chalk.hex("#3f51b5")("Native Server Started at http://localhost:" + this.port))
+            console.log(chalk.hex("#3f51b5")("Native Server Started at http://192.168.8.125:" + this.port))
         })
     }
 

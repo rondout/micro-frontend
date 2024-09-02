@@ -6,12 +6,12 @@ import { getToken } from "../../models/base.model";
  * @Author: shufei.han
  * @Date: 2024-08-28 10:13:37
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 14:49:44
+ * @LastEditTime: 2024-09-02 09:58:09
  * @FilePath: \micro-frontend\child-react-app\src\views\messages\BaseToChild.tsx
  * @Description:
  */
 export default function BaseToChild() {
-  const { messages } = useMicro();
+  const { messages, handleMessage } = useMicro();
   const [modal, contextHolder] = Modal.useModal();
 
   const viewToken = () => {
@@ -28,10 +28,18 @@ export default function BaseToChild() {
     });
   };
 
+  const getMsgManually = () => {
+   const data = window.microApp.getData()
+   handleMessage(data)
+  };
+
   return (
     <div>
       {contextHolder}
-      <Button onClick={viewToken}>View Token</Button>
+      <div className="flex-start">
+        <Button onClick={viewToken}>View Token</Button>
+        <Button onClick={getMsgManually}>Get Messages Manually</Button>
+      </div>
       <h1>Base to Child</h1>
       {messages.map((item, index) => (
         <div key={index}>
