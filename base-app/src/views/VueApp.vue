@@ -2,12 +2,12 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 16:15:26
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-09-02 10:17:08
+ * @LastEditTime: 2024-09-02 12:01:22
  * @FilePath: \micro-frontend\base-app\src\views\VueApp.vue
  * @Description: 
 -->
 <template>
-    <micro-app :name="SubApps.VUE" @created="created" url="http://localhost:4002/" iframe @datachange="handleChange"></micro-app>
+    <micro-app :name="SubApps.VUE" @created="created" url="http://192.168.8.125:4002/" activeRule="/vue/*" :props="{base:'/vue'}" iframe @datachange="handleChange"></micro-app>
 </template> 
 
 <script setup lang="ts">

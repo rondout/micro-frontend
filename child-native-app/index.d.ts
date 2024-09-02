@@ -19,6 +19,8 @@ declare global {
         microApp: {
             addDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
             removeDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+            removeGlobalDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+            addGlobalDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
             clearDataListener: () => void;
             getData: () => MicroMessage;
             // eslint-disable-next-line @typescript-eslint/ban-types

@@ -36,7 +36,7 @@ export default function BaseToChild() {
   return (
     <div>
       {contextHolder}
-      <div className="flex">
+      <div className="flex-start">
         <Button onClick={viewToken}>View Token</Button>
         <Button onClick={getMsgManually}>Get Messages Manually</Button>
       </div>

@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-27 18:41:38
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 14:29:31
+ * @LastEditTime: 2024-09-02 10:32:29
  * @FilePath: \micro-frontend\child-vue3-app\src\models\base.model.ts
  * @Description: 
  */
@@ -10,6 +10,7 @@ export enum MicroMessageType {
     CHANGE_THEME = 'change_theme',
     SET_COUNT = 'set_count',
     TEXT_MSG = 'text_msg',
+    GLOBAL_MSG = 'global_msg'
 }
 
 export const isMicroEnv = window.__MICRO_APP_ENVIRONMENT__;

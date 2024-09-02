@@ -8,7 +8,7 @@
  * @Description: 
 -->
 <template>
-    <micro-app :name="SubApps.REACT" @created="created" :data="data" keep-alive url="http://localhost:4003/" iframe  @datachange="handleChange"></micro-app>
+    <micro-app :name="SubApps.REACT" @created="created" :data="data" keep-alive url="http://192.168.8.125:4003/" iframe  @datachange="handleChange"></micro-app>
 </template> 
 
 <script setup lang="ts">

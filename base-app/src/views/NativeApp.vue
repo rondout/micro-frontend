@@ -7,7 +7,7 @@
  * @Description: 
 -->
 <template>
-    <micro-app :name="SubApps.NATIVE" @created="created" url="http://localhost:4004/" iframe></micro-app>
+    <micro-app :name="SubApps.NATIVE" @created="created" url="http://192.168.8.125:4004/" iframe></micro-app>
 </template> 
 
 <script setup lang="ts">

@@ -14,6 +14,7 @@ export enum MicroMessageType {
   CHANGE_THEME = 'change_theme',
   SET_COUNT = 'set_count',
   TEXT_MSG = 'text_msg',
+  GLOBAL_MSG = 'global_msg'
 }
 
 export const isMicroEnv = window.__MICRO_APP_ENVIRONMENT__;

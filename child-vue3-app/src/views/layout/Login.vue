@@ -3,8 +3,8 @@
  * @Author: shufei.han
  * @Date: 2024-08-27 17:26:14
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-09-02 11:02:15
- * @FilePath: \micro-frontend\base-app\src\views\Login.vue
+ * @LastEditTime: 2024-09-02 11:16:14
+ * @FilePath: \micro-frontend\child-vue3-app\src\views\layout\Login.vue
  * @Description: 
 -->
 <template>
@@ -57,7 +57,7 @@ const handleLogin = async () => {
         state.loading = true
         await new Promise(resolve => setTimeout(resolve, 1000))
         state.loading = false
-        setToken(nanoid())
+        setToken("vue3-token"+nanoid())
         router.push('/')
     } catch (error) {
         message.error("请输入正确的用户名和密码")

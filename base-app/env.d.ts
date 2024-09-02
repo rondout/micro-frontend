@@ -19,6 +19,10 @@ declare global {
 
 declare module '@micro-zoe/micro-app' {
     interface MicroApp {
+        addDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+        removeDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+        removeGlobalDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
+        addGlobalDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
         setData: <T>(appName: SubApps, data: {type: MicroMessageType; value?:T}) => void;
         getGlobalData: () => MicroMessage;
         setGlobalData: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void;
