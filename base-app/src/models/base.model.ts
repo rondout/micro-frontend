@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 11:05:53
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-09-02 12:05:41
+ * @LastEditTime: 2024-09-02 12:23:18
  * @FilePath: \micro-frontend\base-app\src\models\base.model.ts
  * @Description:
  */
@@ -33,8 +33,8 @@ export const SubAppsConfigMap = new Map<SubApps, SubAppConfig>([
       label: "VUE APP",
       description: 'Vue3 + Vite App',
       entry: "//http://192.168.8.125:3000",
-      routerPath: "/vue",
-      activeRule: "/vue",
+      routerPath: "/vue/",
+      activeRule: "/vue/",
     },
   ],
   [
@@ -44,7 +44,7 @@ export const SubAppsConfigMap = new Map<SubApps, SubAppConfig>([
       label: "REACT APP",
       description: 'React + Vite App',
       entry: "//http://192.168.8.125:3001",
-      routerPath: "/react",
+      routerPath: "/react/",
     },
   ],
   [
@@ -54,7 +54,7 @@ export const SubAppsConfigMap = new Map<SubApps, SubAppConfig>([
       label: "NATIVE APP",
       description: 'Native + Express App',
       entry: "//http://192.168.8.125:3002",
-      routerPath: "/native",
+      routerPath: "/native/",
     },
   ],
 ]);

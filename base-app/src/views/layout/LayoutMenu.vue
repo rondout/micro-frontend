@@ -2,8 +2,8 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 14:17:58
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-20 17:46:00
- * @FilePath: \qiankun\base-app\src\views\layout\LayoutMenu.vue
+ * @LastEditTime: 2024-09-02 12:21:47
+ * @FilePath: \micro-frontend\base-app\src\views\layout\LayoutMenu.vue
  * @Description: 
 -->
 <template>
@@ -34,6 +34,8 @@ const menus = [...baseMenus, ...microMenus]
 
 watch(() => route.path, () => {
     const matchedRoute = menus.find(item => item.key === route.path)
+    console.log(matchedRoute);
+    
     if(matchedRoute) {
         activeKeys.value = [matchedRoute.key]
     }

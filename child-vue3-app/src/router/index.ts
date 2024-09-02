@@ -2,17 +2,17 @@
  * @Author: shufei.han
  * @Date: 2024-08-01 16:14:55
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-09-02 12:06:27
+ * @LastEditTime: 2024-09-02 12:19:30
  * @FilePath: \micro-frontend\child-vue3-app\src\router\index.ts
  * @Description: 
  */
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import BaseToChild from '../views/BaseToChild.vue'
 import MainLayout from '@/views/layout/MainLayout.vue'
 import { getToken } from '@/models/base.model'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.VITE_BASE_URL),
   routes: [
     {
       path: '/',

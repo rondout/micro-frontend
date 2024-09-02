@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-08 14:52:27
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-09-02 12:06:39
+ * @LastEditTime: 2024-09-02 12:16:08
  * @FilePath: \micro-frontend\base-app\src\micro\index.ts
  * @Description: 
  */
@@ -15,7 +15,7 @@ export function startMicro() {
     console.log("MicroApp start!");
     microApp.start({
         // 'disable-memory-router':true,
-        // 'router-mode':'native-scope'
+        'router-mode':'native'
     });
     const mainStore = useMainStore()
     microApp.addGlobalDataListener((msg) => {
