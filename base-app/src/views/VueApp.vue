@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 16:15:26
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 14:26:21
+ * @LastEditTime: 2024-09-02 10:17:08
  * @FilePath: \micro-frontend\base-app\src\views\VueApp.vue
  * @Description: 
 -->

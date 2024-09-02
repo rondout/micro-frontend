@@ -22,7 +22,9 @@ declare global {
             removeDataListener:(dataListener: (data: MicroMessage) => any, autoTrigger?: boolean) => void;
             clearDataListener: () => void;
             getData: () => MicroMessage;
-            dispatch: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void
+            dispatch: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void;
+            getGlobalData: () => MicroMessage;
+            setGlobalData: <T extends MicroMessage = MicroMessage, C extends Function>(data:T, cb?: C) => void;
         };
         /** 应用名称 */
         __MICRO_APP_NAME__: string;

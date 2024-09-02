@@ -39,7 +39,8 @@ export default function useMicro() {
     }, [])
 
     return {
-        messages
+        messages,
+        handleMessage
     }
 }
 

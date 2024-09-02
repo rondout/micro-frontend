@@ -3,13 +3,11 @@
  * @Author: shufei.han
  * @Date: 2024-08-02 09:29:40
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 09:41:53
- * @FilePath: \micro-frontend\child-react-app\src\vite-env.d.ts
+ * @LastEditTime: 2024-09-02 10:03:33
+ * @FilePath: \micro-frontend\child-native-app\index.d.ts
  * @Description: 
  */
-/// <reference types="vite/client" />
-
-import { MicroMessageType } from "./models/base.model";
+import { MicroMessageType } from "./src/models/base.model";
 
 declare global {
 
