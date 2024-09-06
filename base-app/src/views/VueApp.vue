@@ -23,7 +23,6 @@ const created= (event: CustomEvent) => {
 
 const handleChange = (e) => {
     setMsgFromChild(SubApps.VUE, e.detail.data as MicroMessage)
-    
 }
 </script> 
 

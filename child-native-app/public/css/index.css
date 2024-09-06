@@ -1,0 +1,64 @@
+#native-app-container {
+    padding: 16px;
+    height: 100%;
+    .main-title {
+        color: var(--primary);
+        margin-bottom: 16px;
+    }
+    .radio-buttons {
+        border: 1px solid var(--primary);
+        display: inline-flex;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: -1px;
+        overflow: hidden;
+        .item {
+            padding: 8px 16px;
+        }
+        .item-selected {
+            color: #Fff;
+            background-color: var(--primary);
+        }
+    }
+    .info-container {
+        width: 800px;
+        min-height: 200px;
+        max-height: 500px;
+        overflow: auto;
+        border: 1px dashed var(--primary);
+        padding: 16px;
+        h3 {
+            margin: 0;
+        }
+        .info-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            border: 1px solid var(--primary);
+            margin-bottom: 12px;
+            border-radius: 6px;
+            &:hover {
+                background-color: var(--primary);
+                color: #fff;
+                .is-global-msg {
+                    background-color: #fff;
+                    color: var(--primary);
+                }
+            }
+            button {
+                cursor: pointer;
+            }
+            .is-global-msg {
+                background-color: var(--primary);
+                color: #Fff;
+                padding: 4px 8px;
+                margin-right: 8px;
+                border-radius: 4px;
+            }
+        }
+    }
+    .to-base-container {
+        input, button {
+            height: 32px;
+        };
+    }
+}

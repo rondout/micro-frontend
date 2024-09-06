@@ -2,7 +2,7 @@
  * @Author: shufei.han
  * @Date: 2024-08-20 10:20:45
  * @LastEditors: shufei.han
- * @LastEditTime: 2024-08-28 10:58:03
+ * @LastEditTime: 2024-09-06 18:27:34
  * @FilePath: \micro-frontend\child-native-app\public\index.html
  * @Description: 
 -->
@@ -11,9 +11,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><script src="./js/index.js"></script>
+    <title>Document</title>
+    <script type="module" src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    </link>">
 </head>
 <body>
-    <h1>This is native app page.</h1>
+    <div class="full-height" id="native-app">
+        <div id="native-app-container">
+            <h2 class="main-title">This is native child app</h2>
+            <div class="radio-buttons flex-start">
+                <div class="item pointer" id="from-base">来自base的消息</div>
+                <div class="item pointer" id="to-base">给base发送消息</div>
+            </div>
+            <div class="info-container">
+                <h3>消息列表： 
+                    <span class="msg-count"></span>
+                </h3>
+            </div>   
+            <div class="info-container to-base-container">
+                <div class="flex-start">
+                    <input type="text" />
+                    <button class="pointer" id="send-to-base-btn">send</button>
+                </div>
+            </div>    
+        </div>
+    </div>
 </body>
 </html>
