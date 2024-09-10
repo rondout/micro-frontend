@@ -7,8 +7,8 @@
  * @Description: 
 -->
 <template>
-    <!-- <micro-app :name="SubApps.VUE" @created="created" url="http://192.168.56.1:4002/" activeRule="/vue/*" :props="{base:'/vue'}" iframe @datachange="handleChange"></micro-app> -->
-    <micro-app :name="SubApps.VUE" @created="created" url="http://192.168.56.1:4002/" activeRule="/vue/*" baseroute="/vue/" iframe @datachange="handleChange"></micro-app>
+    <!-- <micro-app :name="SubApps.VUE" @created="created" url="http://localhost:4002/" activeRule="/vue/*" :props="{base:'/vue'}" iframe @datachange="handleChange"></micro-app> -->
+    <micro-app :name="SubApps.VUE" @created="created" url="http://localhost:4002/" activeRule="/vue/*" baseroute="/vue/" iframe @datachange="handleChange"></micro-app>
 </template> 
 
 <script setup lang="ts">

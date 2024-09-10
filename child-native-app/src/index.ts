@@ -25,7 +25,7 @@ class NativeServer {
         this.setCors();
         this.instance.use(express.static(resolve(__dirname, '../public')))
         this.instance.listen(this.port, () => {
-            console.log(chalk.hex("#3f51b5")("Native Server Started at http://192.168.56.1:" + this.port))
+            console.log(chalk.hex("#3f51b5")("Native Server Started at http://localhost:" + this.port))
         })
     }
 
